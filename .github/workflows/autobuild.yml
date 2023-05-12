@@ -37,7 +37,7 @@ jobs:
             echo '```'
           ) | tee release.md
       - id: create_release
-        uses: actions/create-release@v1
+        uses: actions/create-release@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -46,7 +46,7 @@ jobs:
           body_path: release.md
           prerelease: false
           draft: false
-      - uses: actions/upload-release-asset@v1
+      - uses: actions/upload-release-asset@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
